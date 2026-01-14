@@ -21,16 +21,16 @@
 
         pandoc "$1" -o "$(basename $1 .md).pdf" \
           --from markdown \
-          --to pdf \
+          --to pdf -citations \
           --standalone \
+          --toc \
           --pdf-engine=typst \
           --pdf-engine-opt="--ignore-system-fonts" \
           --pdf-engine-opt="--ignore-embedded-fonts" \
           --pdf-engine-opt="--font-path=${font pkgs}/share/fonts" \
           --pdf-engine-opt="--root=/" \
           -V template=${./template.typ} \
-          -V mainfont='Liberation Serif' \
-          --citeproc
+          -V mainfont='Liberation Serif'
       '';
   in {
     devShells = forAllSystems ({pkgs}: {

@@ -151,6 +151,12 @@
     leading: 8pt,
   )
 
+  set bibliography(
+    title: if lang == "nl" { "Bronvermelding" } else { auto },
+    full: true,
+    style: "ieee",
+  )
+  show bibliography: set text(size: fontsize - 1pt)
 
   // STYLING SPECIFIC STRINGS OF TEXT
   show "LaTeX": smallcaps
