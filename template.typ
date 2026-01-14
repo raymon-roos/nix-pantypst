@@ -72,7 +72,7 @@
     historical-ligatures: false,
     number-width: "proportional",
   )
-  //set strong(delta: 200) // use semibold instead of bold
+  set strong(delta: 200) // use semibold instead of bold
 
 
   // Block quotations
@@ -83,7 +83,7 @@
   show quote: set text(style: "normal")
 
   // Lists
-  set list(indent: 2em)
+  set list(indent: 1em)
   set enum(indent: 1em)
 
   // Code blocks: coloured monospace
@@ -185,8 +185,7 @@
     v(4em)
   }
 
-
-  // THIS IS THE ACTUAL BODY:
+  // This is the actual body:
 
   set par(justify: true) //default for the rest of the doc
 
