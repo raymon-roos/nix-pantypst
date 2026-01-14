@@ -159,18 +159,15 @@
 
   // THIS IS THE TITLE BLOCK
   if title != none or authors.len() > 0 or date != none or abstract != none {
-    v(1em)
     set par(justify: false)
     align(left, text(size: 18pt)[
       #title#if subtitle != none [: #emph[#subtitle] ]
     ])
     if authors.len() > 0 {
-      v(0.5em)
-      align(left, text(size: 12pt)[#authors.first().name])
+      align(right, text(size: 12pt)[#authors.first().name])
     }
     if date != none {
-      v(0.5em)
-      align(left, text(size: 12pt)[#date])
+      align(right, text(size: 11pt)[#date])
     }
     if abstract != none {
       v(0.5em)
@@ -180,9 +177,11 @@
           + text(size: 11pt, style: "italic")[#abstract],
       )
     }
-    v(1em)
+  }
+  if title != none {
+    v(0.5em)
     line(start: (1%, 0%), end: (99%, 0%), stroke: 1pt + gray)
-    v(4em)
+    v(3em)
   }
 
   // This is the actual body:
